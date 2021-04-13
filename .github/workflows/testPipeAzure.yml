@@ -1,4 +1,4 @@
-name: 
+name: CI
 - task: Ansible@0
   inputs:
     ansibleInterface: 'remoteMachine'
