@@ -1,6 +1,4 @@
 
-
-# Run this workflow every time a commit is pushed to main or a pull request is opened against main
 on: [push,pull_request]
 #push:
  #   branches: [ main ]
@@ -16,12 +14,6 @@ jobs:
           uses: Azure/pipelines@v1
           with:
             azure-devops-project-url: https://dev.azure.com/avinashjha0266/test_ansible
-            azure-pipeline-name: 'AnsiblePipeline'
+            azure-pipeline-name: 'AnsiblePipeline1'
             azure-devops-token: ${{ secrets.AZURE_DEVOPS_TOKEN }}
-     - task: Ansible@0
-  inputs:
-    ansibleInterface: 'remoteMachine'
-    connectionOverSsh: 'ansibleVmssh'
-    playbookSourceRemoteMachine: 'ansibleMachine'
-    playbookPathAnsibleMachineOnRemoteMachine: '~/ansible_main/playbooks/'
-    inventoriesRemoteMachine: 'noInventory'
+     
