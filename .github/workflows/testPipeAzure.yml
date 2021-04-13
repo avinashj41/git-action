@@ -1,10 +1,4 @@
-- task: Ansible@0
-  inputs:
-    ansibleInterface: 'remoteMachine'
-    connectionOverSsh: 'ansibleVmssh'
-    playbookSourceRemoteMachine: 'ansibleMachine'
-    playbookPathAnsibleMachineOnRemoteMachine: '~/ansible_main/playbooks/'
-    inventoriesRemoteMachine: 'noInventory'
+
 
 # Run this workflow every time a commit is pushed to main or a pull request is opened against main
 on: [push,pull_request]
@@ -24,3 +18,10 @@ jobs:
             azure-devops-project-url: https://dev.azure.com/avinashjha0266/test_ansible
             azure-pipeline-name: 'AnsiblePipeline'
             azure-devops-token: ${{ secrets.AZURE_DEVOPS_TOKEN }}
+     - task: Ansible@0
+  inputs:
+    ansibleInterface: 'remoteMachine'
+    connectionOverSsh: 'ansibleVmssh'
+    playbookSourceRemoteMachine: 'ansibleMachine'
+    playbookPathAnsibleMachineOnRemoteMachine: '~/ansible_main/playbooks/'
+    inventoriesRemoteMachine: 'noInventory'
