@@ -1,11 +1,18 @@
-name: CI
+name: 
+- task: Ansible@0
+  inputs:
+    ansibleInterface: 'remoteMachine'
+    connectionOverSsh: 'ansibleVmssh'
+    playbookSourceRemoteMachine: 'ansibleMachine'
+    playbookPathAnsibleMachineOnRemoteMachine: '~/ansible_main/playbooks/'
+    inventoriesRemoteMachine: 'noInventory'
 
 # Run this workflow every time a commit is pushed to main or a pull request is opened against main
-on:
-push:
-    branches: [ main ]
-pull_request:
-    branches: [ main ]
+on: [push,pull_request]
+#push:
+ #   branches: [ main ]
+#pull_request:
+ #   branches: [ main ]
 
 jobs:
     build:
